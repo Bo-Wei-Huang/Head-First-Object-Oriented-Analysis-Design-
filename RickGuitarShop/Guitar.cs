@@ -11,25 +11,25 @@ namespace RickGuitarShop
     {
         private string _serialNumber;
 
-        private string _builder;
+        private Builder _builder;
 
         private string _model;
 
-        private string _type;
+        private _Type _type;
 
-        private string _topWood;
+        private Wood _topWood;
 
-        private string _backWood;
+        private Wood _backWood;
 
         private double _price;
 
         public Guitar(
             string serialNumber,
-            string builder,
+            Builder builder,
             string model,
-            string type,
-            string topWood,
-            string backWood,
+            _Type type,
+            Wood topWood,
+            Wood backWood,
             double price)
         {
             _serialNumber = serialNumber;
@@ -47,14 +47,48 @@ namespace RickGuitarShop
 
         public double SetPrice(float price) => this._price = price;
 
-        public string GetBuilder() => this._builder;
+        public Builder GetBuilder() =>this._builder;
 
         public string GetModel() => this._model;
 
-        public string getType() => this._type;  
+        public _Type getType() => this._type;
 
-        public string GetBackWood() => this._backWood;
+        public Wood GetBackWood() => this._backWood;
 
-        public string GetTopWood() => this._topWood;
+        public Wood GetTopWood() => this._backWood;
     }
+
+    public enum _Type
+    {
+        ACOUSTIC,
+        ELECTRIC
+    }
+
+    public enum Builder
+    {
+        FENDER,
+        MARTIN,
+        GIBSON,
+        COLLINGS,
+        OLSON,
+        RYAN,
+        PRS,
+        ANY
+    }
+
+    public enum Wood
+    {
+        INDIAN_ROSEWOOD,
+        BRAZILIAN_ROSEWOOD,
+        MAHOGANY,
+        MAPLE,
+        COCOBOLO,
+        CEDAR,
+        ADIRONDACK,
+        ALDER,
+        SITKA
+    }
+
+
+
 }
